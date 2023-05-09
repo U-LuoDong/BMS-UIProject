@@ -38,6 +38,9 @@ class SearchPlayerPage(BasePage):
     # 点击查询
     location_type_search, location_express_search = searchPlayerPage_Options[
         "search_player_page.search"].split(":")
+    # 输入经验值
+
+    # 点击增加
 
     element_homePageButton = (location_type_homepage, location_express_homepage)
     element_playerManagement = (location_type_playerManagement, location_express_playerManagement)
