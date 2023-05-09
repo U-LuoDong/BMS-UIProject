@@ -83,8 +83,12 @@ class SearchPlayerPage(BasePage):
         time.sleep(5)
 
     # 给玩家添加经验
+    def input_exp(self):
+        pass
 
     # 点击增加按钮
+    def add_exp_button(self):
+        pass
 
 
 if __name__ == '__main__':
