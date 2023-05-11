@@ -11,7 +11,7 @@ from time import sleep
 
 from selenium import webdriver
 
-from Base.base_page import BasePage
+from Base.basePage import BasePage
 from Util.ParseConfFile import ParseConfigFile
 
 

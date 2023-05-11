@@ -28,12 +28,15 @@ class BasePage:
     def click(self, loc):
         self.locator(loc).click()
 
-    # 关闭浏览器
-    def close(self):
-        self.driver.close()
-
     # 切换句柄
-    
+    def switch_to_window(self):
+        handle = self.driver.current_window_handle
+        self.driver.switch_to.window(handle)
+
     # 切换iframe
     def switch_iframe(self, loc):
         self.driver.switch_to.frame(self.locator(loc))
+
+    # 关闭浏览器
+    def close(self):
+        self.driver.close()
