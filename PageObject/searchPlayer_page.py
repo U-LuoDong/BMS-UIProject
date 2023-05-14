@@ -10,6 +10,8 @@
 import time
 
 from selenium import webdriver
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
 
 from Base.basePage import BasePage
 from PageObject.login_page import LoginPage
@@ -36,7 +38,7 @@ class SearchPlayerPage(BasePage):
     lt_input_playerID, le_input_playerID = searchPlayerPage_Options["sp_page.input_player_id"].split(":")
 
     # 元素-点击查询
-    lt_search_button, le_search_button = searchPlayerPage_Options["ssp_page.search_click"].split(":")
+    lt_search_button, le_search_button = searchPlayerPage_Options["sp_page.search_click"].split(":")
 
     # 元素-添加经验值输入框
     lt_input_exp, le_input_exp = searchPlayerPage_Options["sp_page.add_exp"].split(":")
@@ -99,16 +101,18 @@ if __name__ == '__main__':
     driver = webdriver.Chrome()
     driver.get("http://test.albcoininworld.com:9100/")
     login = LoginPage(driver)
-    time.sleep(15)
+    # time.sleep(15)
+    # 添加隐式等待 替换强制等待
+    WebDriverWait(driver, 2).until(lambda driver:driver.login.input_username("admin"), "超时了")
     login.input_username("admin")
     login.input_password("123456")
     login.click_button()
-    time.sleep(20)
+    time.sleep(100)
     # todo: 网页加载成功后再调点击事件
-    sp = SearchPlayerPage(driver)
-    # sp.click_homePageButton()
-    time.sleep(5)
-    sp.click_PlayerManagement()
-    time.sleep(5)
-    sp.click_searchPlayer()
-    time.sleep(30)
+    # sp = SearchPlayerPage(driver)
+    # # sp.click_homePageButton()
+    # time.sleep(5)
+    # sp.click_PlayerManagement()
+    # time.sleep(5)
+    # sp.click_searchPlayer()
+    # time.sleep(30)
