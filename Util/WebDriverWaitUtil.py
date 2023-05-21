@@ -14,8 +14,12 @@ method：在等待时间，每隔一段时间（__init__中的poll_frequency）�
 
 WebDriverWait(driver, 超时时长, 调用频率, 忽略异常).until(可执行方法, 超时时返回的信息)
 """
+from selenium.webdriver.support.wait import WebDriverWait
 
 
-class WebDriverWait:
-    def WebDriverWait(self):
-        pass
+class Wait:
+    def WebDriverWait(self, driver, loc):
+        try:
+            WebDriverWait(driver, 2).until(lambda driver: driver.find_element(*loc), "超时了")
+        except Exception as e:
+            print(e)
