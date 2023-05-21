@@ -16,4 +16,5 @@ test_case_path = os.path.join(base_dir, "TestCases")
 
 # 测试报告目录
 report_path = os.path.join(base_dir, "Reports")
-# print(logPath)
+# print(report_path)
+
