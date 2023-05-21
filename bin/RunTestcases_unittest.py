@@ -8,7 +8,7 @@ import unittest
 
 from Conf.VarConfig import test_case_path, report_path
 from TestCases.test_login_unittest import LoginCase
-from TestCases.test_searchplayer_unittest import searchPlayerCase
+from TestCases.test_searchplayer_unittest import SearchPlayerCase
 
 if __name__ == '__main__':
     # 实例化一个测试套件

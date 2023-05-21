@@ -11,7 +11,7 @@ from selenium import webdriver
 
 from PageObject.SearchPlayer_page import SearchPlayerPage
 
-testdata = [{"ID": "1001269", "AddExp": "100"}]
+testdata = [{"PlayerID": "1001269", "AddExp": "100"}]
 
 
 class SearchPlayerCase(unittest.TestCase):
@@ -31,7 +31,7 @@ class SearchPlayerCase(unittest.TestCase):
     @ddt.ddt(*testdata)  # 星号是拆包的操作 不加星号会把整个列表当作测试数据
     # data代表传进来的每一条数据
     def test_search_player(self, data):
-        id = data["ID"]
+        id = data["PlayerID"]
         addExp = data["AddExp"]
         self.sp.click_homePage()  # 点击首页
         self.sp.click_PlayerManagement()  # 点击玩家管理

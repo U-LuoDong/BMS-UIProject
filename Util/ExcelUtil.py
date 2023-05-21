@@ -43,10 +43,12 @@ class ExcelUtil:
         # 获取某一单元格的值
         return self.sheet.cell(row=row, column=column).value
 
+
 # 调试
-# if __name__ == '__main__':
-#     filename = (testData + "/BMS_testcase.xlsx")
-#     wk = ExcelUtil()
-#     wk.load_workbook(filename)
-#     wk.getsheetName("login")
-#     print(wk.cellName(2, 3))
+if __name__ == '__main__':
+    filename = (testData + "/BMSTestCase.xlsx")
+    wk = ExcelUtil()
+    wk.load_workbook(filename)
+    wk.get_sheet_name("SearchPlayer")
+    print(wk.row_values(2))
+    print(wk.cell_name(2, 4))
