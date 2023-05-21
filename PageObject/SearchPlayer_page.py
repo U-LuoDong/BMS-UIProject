@@ -78,12 +78,12 @@ class SearchPlayerPage(BasePage):
         except Exception as e:
             print(e)
 
-    # 输入玩家ID或者手机号
+    # 4.输入玩家ID或者手机号
     def input_playerMessage(self, txt):
         self.input(self.element_input_playerID, txt)
         time.sleep(5)
 
-    # 点击查询按钮
+    # 5.点击查询按钮
     def click_search(self):
         self.click(self.element_search_button)
         time.sleep(5)
@@ -92,7 +92,7 @@ class SearchPlayerPage(BasePage):
     def input_exp(self, txt):
         self.input(self.element_input_exp, txt)
 
-    # 点击增加按钮
+    # 6.点击增加按钮
     def add_exp_button(self):
         self.click(self.element_add_exp_button)
 

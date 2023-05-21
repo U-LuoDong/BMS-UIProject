@@ -6,7 +6,6 @@ from PageObject.SearchPlayer_page import SearchPlayerPage
 
 
 class searchPlayerCase(unittest.TestCase):
-
     driver = None
 
     @classmethod
@@ -22,13 +21,11 @@ class searchPlayerCase(unittest.TestCase):
 
     def test_search_player(self):
         # 登陆成功
-        lo
+        pass
 
         # 调用方法
 
         self.assertEqual("1=2")
-
-
 
 
 if __name__ == '__main__':
