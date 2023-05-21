@@ -2,7 +2,7 @@ import unittest
 
 from selenium import webdriver
 
-from PageObject.searchPlayer_page import SearchPlayerPage
+from PageObject.SearchPlayer_page import SearchPlayerPage
 
 
 class searchPlayerCase(unittest.TestCase):

@@ -9,7 +9,7 @@ import unittest
 import ddt
 from selenium import webdriver
 
-from PageObject.login_page import LoginPage
+from PageObject.Login_page import LoginPage
 
 # TODO：测试数据都是通过读取Excel获得，此处先写成这样，后面改造
 testdata = [{"username": "admin", "password": "123456"}]

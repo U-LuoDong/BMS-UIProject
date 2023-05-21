@@ -13,8 +13,8 @@ from selenium import webdriver
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
-from Base.basePage import BasePage
-from PageObject.login_page import LoginPage
+from Base.BasePage import BasePage
+from PageObject.Login_page import LoginPage
 from Util.ParseConfFile import ParseConfigFile
 
 
