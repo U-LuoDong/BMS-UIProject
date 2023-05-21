@@ -14,12 +14,36 @@ method：在等待时间，每隔一段时间（__init__中的poll_frequency）�
 
 WebDriverWait(driver, 超时时长, 调用频率, 忽略异常).until(可执行方法, 超时时返回的信息)
 """
+
+
 from selenium.webdriver.support.wait import WebDriverWait
 
+# from PageObject.Login_page import LoginPage
+#
+# from selenium import webdriver
+# from PageObject import Login_page
+# from Util.ParseConfFile import ParseConfigFile
 
-class Wait:
-    def WebDriverWait(self, driver, loc):
-        try:
-            WebDriverWait(driver, 2).until(lambda driver: driver.find_element(*loc), "超时了")
-        except Exception as e:
-            print(e)
+
+def ExplicitWait(loc):
+    try:
+        driver = None
+        WebDriverWait(driver, 15).until(lambda driver: driver.find_element(*loc), "超时了")
+    except Exception as e:
+        print(e)
+
+
+# 调试
+# if __name__ == '__main__':
+#     driver = webdriver.Chrome()
+#     lg = LoginPage(driver)
+#     lg.open_url("http://test.albcoininworld.com:9100/")
+#
+#     par = ParseConfigFile()
+#     login_page_options = par.get_section("login_page")
+#     location_type_user, location_express_user = login_page_options["login_page.username"].split(":")
+#     element_username = (location_type_user, location_express_user)
+#
+#     ExplicitWait(element_username)
+#     lg.input_username("admin")
+    # ExplicitWait()

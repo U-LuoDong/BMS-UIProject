@@ -10,12 +10,11 @@
 import time
 
 from selenium import webdriver
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
 
 from Base.BasePage import BasePage
 from PageObject.Login_page import LoginPage
 from Util.ParseConfFile import ParseConfigFile
+from Util.WebDriverWaitUtil import ExplicitWait
 
 
 class SearchPlayerPage(BasePage):
@@ -57,14 +56,17 @@ class SearchPlayerPage(BasePage):
     # 1.点击首页
     def click_homePage(self):
         try:
+            # 添加显示等待
+            ExplicitWait(self.element_homePage)
             self.click(self.element_homePage)
-            time.sleep(5)
+            # time.sleep(5)
         except Exception as e:
             print(e)
 
     # 2.点击玩家管理
     def click_PlayerManagement(self):
         try:
+            ExplicitWait(self.element_player_management)
             self.click(self.element_player_management)
             time.sleep(5)
         except Exception as e:
@@ -103,14 +105,14 @@ if __name__ == '__main__':
     login = LoginPage(driver)
     # time.sleep(15)
     # 添加隐式等待 替换强制等待
-    WebDriverWait(driver, 2).until(lambda driver:driver.login.input_username("admin"), "超时了")
+    # WebDriverWait(driver, 2).until(lambda driver: driver.login.input_username("admin"), "超时了")
     login.input_username("admin")
     login.input_password("123456")
     login.click_button()
     time.sleep(100)
     # todo: 网页加载成功后再调点击事件
-    # sp = SearchPlayerPage(driver)
-    # # sp.click_homePageButton()
+    sp = SearchPlayerPage(driver)
+    sp.click_homePage()
     # time.sleep(5)
     # sp.click_PlayerManagement()
     # time.sleep(5)

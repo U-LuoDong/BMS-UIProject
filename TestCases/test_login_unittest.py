@@ -11,6 +11,7 @@ from selenium import webdriver
 
 from Conf.VarConfig import testData
 from PageObject.Login_page import LoginPage
+
 from Util.ExcelUtil import ExcelUtil
 
 # TODO：测试数据都是通过读取Excel获得，此处先写成这样，后面改造
@@ -21,6 +22,7 @@ test_data.load_workbook(filename)
 test_data.get_sheet_name("Login")
 first_row = test_data.row_values(1)  # 首行
 normal_row = test_data.row_values(2)  # 正常测试数据
+abnormal_row = test_data.row_values(3)  # 异常测试数据
 testdata = [dict(zip(first_row, normal_row))]
 
 
@@ -62,7 +64,7 @@ class LoginCase(unittest.TestCase):
         self.lg.input_password(password)
         # 调用login_page中click_button方法
         # self.lg.click_button()
-        # time.sleep(100)
+        time.sleep(30)
 
 
 if __name__ == '__main__':

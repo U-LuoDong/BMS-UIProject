@@ -13,6 +13,7 @@ from selenium import webdriver
 
 from Base.BasePage import BasePage
 from Util.ParseConfFile import ParseConfigFile
+from Util.WebDriverWaitUtil import ExplicitWait
 
 
 class LoginPage(BasePage):
@@ -51,14 +52,18 @@ class LoginPage(BasePage):
 
     # 输入用户名
     def input_username(self, txt):
+        ExplicitWait(self.element_username)  # 显示等待
         self.input(self.element_username, txt)
+        # self.locator(self.element_username).send_keys(txt)
 
     # 输入密码
     def input_password(self, txt):
+        ExplicitWait(self.element_password)
         self.input(self.element_password, txt)
 
     # 点击登陆按钮
     def click_button(self):
+        ExplicitWait(self.element_button)
         self.click(self.element_button)
 
     # 核心业务 登录页面输入账号和密码 不会写 换方法了
@@ -70,7 +75,6 @@ class LoginPage(BasePage):
     #     self.click(self.element_button)
     #     sleep(1)
     #     # self.switch_iframe(self.element_frame)
-
 
 # 调试
 # if __name__ == '__main__':

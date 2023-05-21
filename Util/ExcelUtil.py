@@ -45,18 +45,15 @@ class ExcelUtil:
 
 
 # 调试
-if __name__ == '__main__':
-    filename = (testData + "/BMSTestCase.xlsx")
-    test_data1 = ExcelUtil()
-    test_data1.load_workbook(filename)
-    test_data1.get_sheet_name("Login")
-    a = test_data1.row_values(1)
-    b = test_data1.row_values(2)
-    test_data1s = dict(zip(a, b))
-    print(test_data1s)
-    print(test_data1s["UserName"])
-    print(test_data1s["PassWord"])
-
-
-
+# if __name__ == '__main__':
+#     filename = (testData + "/BMSTestCase.xlsx")
+#     test_data1 = ExcelUtil()
+#     test_data1.load_workbook(filename)
+#     test_data1.get_sheet_name("Login")
+#     a = test_data1.row_values(1)
+#     b = test_data1.row_values(2)
+#     test_data1s = dict(zip(a, b))
+#     print(test_data1s)
+#     print(test_data1s["UserName"])
+#     print(test_data1s["PassWord"])
     # print(wk.cell_name(2, 5))
