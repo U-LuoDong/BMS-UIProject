@@ -57,7 +57,7 @@ class SearchPlayerPage(BasePage):
     def click_homePage(self):
         try:
             # 添加显示等待
-            ExplicitWait(self.element_homePage)
+            ExplicitWait(self.driver, self.element_homePage)
             self.click(self.element_homePage)
             # time.sleep(5)
         except Exception as e:
@@ -66,36 +66,40 @@ class SearchPlayerPage(BasePage):
     # 2.点击玩家管理
     def click_PlayerManagement(self):
         try:
-            ExplicitWait(self.element_player_management)
+            ExplicitWait(self.driver, self.element_player_management)
             self.click(self.element_player_management)
-            time.sleep(5)
         except Exception as e:
             print(e)
 
     # 3.点击查询玩家
     def click_searchPlayer(self):
         try:
+            ExplicitWait(self.driver, self.element_search_player)
             self.click(self.element_search_player)
-            time.sleep(5)
+
         except Exception as e:
             print(e)
 
     # 4.输入玩家ID或者手机号
     def input_playerMessage(self, txt):
+        ExplicitWait(self.driver, self.element_input_playerID)
         self.input(self.element_input_playerID, txt)
         time.sleep(5)
 
     # 5.点击查询按钮
     def click_search(self):
+        ExplicitWait(self.driver, self.element_search_button)
         self.click(self.element_search_button)
         time.sleep(5)
 
     # 给玩家添加经验
     def input_exp(self, txt):
+        ExplicitWait(self.driver, self.element_input_exp)
         self.input(self.element_input_exp, txt)
 
     # 6.点击增加按钮
     def add_exp_button(self):
+        ExplicitWait(self.driver, self.element_add_exp_button)
         self.click(self.element_add_exp_button)
 
 
@@ -109,12 +113,9 @@ if __name__ == '__main__':
     login.input_username("admin")
     login.input_password("123456")
     login.click_button()
-    time.sleep(100)
-    # todo: 网页加载成功后再调点击事件
+
     sp = SearchPlayerPage(driver)
-    sp.click_homePage()
-    # time.sleep(5)
-    # sp.click_PlayerManagement()
-    # time.sleep(5)
+    # sp.click_homePage() # 点击首页
+    sp.click_PlayerManagement() # 点击玩家管理
     # sp.click_searchPlayer()
-    # time.sleep(30)
+    time.sleep(30)

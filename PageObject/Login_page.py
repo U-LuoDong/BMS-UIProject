@@ -52,18 +52,18 @@ class LoginPage(BasePage):
 
     # 输入用户名
     def input_username(self, txt):
-        ExplicitWait(self.element_username)  # 显示等待
+        ExplicitWait(self.driver, self.element_username)  # 显示等待
         self.input(self.element_username, txt)
         # self.locator(self.element_username).send_keys(txt)
 
     # 输入密码
     def input_password(self, txt):
-        ExplicitWait(self.element_password)
+        ExplicitWait(self.driver,self.element_password)
         self.input(self.element_password, txt)
 
     # 点击登陆按钮
     def click_button(self):
-        ExplicitWait(self.element_button)
+        ExplicitWait(self.driver,self.element_button)
         self.click(self.element_button)
 
     # 核心业务 登录页面输入账号和密码 不会写 换方法了
