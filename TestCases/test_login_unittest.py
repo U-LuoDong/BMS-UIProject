@@ -9,10 +9,19 @@ import unittest
 import ddt
 from selenium import webdriver
 
+from Conf.VarConfig import testData
 from PageObject.Login_page import LoginPage
+from Util.ExcelUtil import ExcelUtil
 
 # TODO：测试数据都是通过读取Excel获得，此处先写成这样，后面改造
-testdata = [{"username": "admin", "password": "123456"}]
+# testdata = [{"username": "admin", "password": "123456"}]
+filename = (testData + "/BMSTestCase.xlsx")
+test_data = ExcelUtil()
+test_data.load_workbook(filename)
+test_data.get_sheet_name("Login")
+a = test_data.row_values(1)
+b = test_data.row_values(2)
+testdata = [dict(zip(a, b))]
 
 
 @ddt.ddt
@@ -43,8 +52,8 @@ class LoginCase(unittest.TestCase):
         # self.assertIn("XXX", self.driver.page_source)
 
         # 新方法
-        username = data['username']
-        password = data['password']
+        username = data['UserName']
+        password = data['PassWord']
         # 调用login_page中openURL方法
         self.lg.open_url("http://test.albcoininworld.com:9100/")
         # 调用login_page中input_username方法
@@ -52,8 +61,8 @@ class LoginCase(unittest.TestCase):
         # 调用login_page中input_password方法
         self.lg.input_password(password)
         # 调用login_page中click_button方法
-        self.lg.click_button()
-        time.sleep(10000)
+        # self.lg.click_button()
+        # time.sleep(100)
 
 
 if __name__ == '__main__':
