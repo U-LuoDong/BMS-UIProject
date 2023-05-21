@@ -74,6 +74,7 @@ if __name__ == '__main__':
     # 邮箱授权码,注意这里不是邮箱密码！！
     mail_license = "lcduhjehwwhuebei"
     # 收件人邮箱（前面的昵称一定要用英文的）
+    # ToDo：此处只能成功发送到第一个收件人邮箱，后续解决一下
     receiver_name = "ld<1559980806@qq.com>"+"lsq<18743172435@163.com>"
     # 邮件主题
     subject_content = """TEST-自动邮件发送"""
