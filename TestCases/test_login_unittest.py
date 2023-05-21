@@ -19,9 +19,9 @@ filename = (testData + "/BMSTestCase.xlsx")
 test_data = ExcelUtil()
 test_data.load_workbook(filename)
 test_data.get_sheet_name("Login")
-a = test_data.row_values(1)
-b = test_data.row_values(2)
-testdata = [dict(zip(a, b))]
+first_row = test_data.row_values(1)  # 首行
+normal_row = test_data.row_values(2)  # 正常测试数据
+testdata = [dict(zip(first_row, normal_row))]
 
 
 @ddt.ddt
