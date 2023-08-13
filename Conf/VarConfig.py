@@ -11,6 +11,8 @@ testData = os.path.join(base_dir, 'Data')
 # 日志文件目录
 log_path = os.path.join(base_dir, 'Log')
 
+
+
 # 测试脚本目录
 test_case_path = os.path.join(base_dir, "TestCases")
 
