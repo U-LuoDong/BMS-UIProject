@@ -5,6 +5,8 @@ import os.path
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # print(BASE_DIR)
 
+
+
 element_location_path = os.path.join(base_dir, 'Conf/locator.ini')
 testData = os.path.join(base_dir, 'Data')
 
